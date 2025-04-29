@@ -1,18 +1,30 @@
+import { useEffect, useState } from "react"
+
 export default function Navbar () {
+    const [theme, setTheme] = useState("light")
+    const toggleTheme = (e) => {
+        e.target.checked ? setTheme("light") : setTheme("synthwave")
+    }
+    console.log(theme)
+    useEffect(() => {
+        localStorage.setItem("theme", theme)
+        const localTheme = localStorage.getItem("theme")
+        document.querySelector("html").setAttribute("data-theme", localTheme)
+    },[theme])
     return (
         <div className="navbar bg-base-100 shadow-lg px-4 fixed z-10">
   <div className="flex-1">
-    <a className="btn btn-ghost text-xl">Sys-Blaze</a>
+    <a className="btn btn-ghost text-2xl gap-0 text-secondary normal-case">Sys-<span className="text-primary">Blaze</span></a>
   </div>
   <div className="flex-none">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Home</a></li>
-      <li><a>Blogs</a></li>
-      <li><a>Bookmarks</a></li>
+      <li className="font-bold"><a>Home</a></li>
+      <li className="font-bold text-primary"><a>Blogs</a></li>
+      <li className="font-bold"><a>Bookmarks</a></li>
     </ul>
     <label className="swap swap-rotate">
   {/* this hidden checkbox controls the state */}
-  <input type="checkbox" className="theme-controller" value="synthwave" />
+  <input type="checkbox" onChange={toggleTheme} className="theme-controller" value="synthwave" />
 
   {/* sun icon */}
   <svg
