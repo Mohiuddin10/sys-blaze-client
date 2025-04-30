@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
+import { Link, NavLink } from "react-router-dom"
 
 export default function Navbar () {
     const [theme, setTheme] = useState("light")
     const toggleTheme = (e) => {
-        e.target.checked ? setTheme("light") : setTheme("synthwave")
+        e.target.checked ? setTheme("synthwave") : setTheme("light")
     }
     console.log(theme)
     useEffect(() => {
@@ -11,19 +12,23 @@ export default function Navbar () {
         const localTheme = localStorage.getItem("theme")
         document.querySelector("html").setAttribute("data-theme", localTheme)
     },[theme])
+
+
+
     return (
         <div className="navbar bg-base-100 shadow-lg px-4 fixed z-10">
-  <div className="flex-1">
-    <a className="btn btn-ghost text-2xl gap-0 text-secondary normal-case">Sys-<span className="text-primary">Blaze</span></a>
-  </div>
-  <div className="flex-none">
-    <ul className="menu menu-horizontal px-1">
-      <li className="font-bold"><a>Home</a></li>
-      <li className="font-bold text-primary"><a>Blogs</a></li>
-      <li className="font-bold"><a>Bookmarks</a></li>
+          <div className="flex-1">
+             <Link to="/" className="btn btn-ghost text-2xl gap-0 text-secondary normal-case">Sys-<span className="text-primary">Blaze</span></Link>
+           </div>
+
+  <div className="flex gap-5">
+    <ul className="menu menu-horizontal px-1 gap-5">
+      <NavLink to="/" className={({isActive}) => isActive ? "text-primary font-bold" : "font-bold"}><a>Home</a></NavLink>
+      <Link to="/blogs" className="font-bold text-primary"><a>Blogs</a></Link>
+      <Link to="/bookmarks" className="font-bold"><a>Bookmarks</a></Link>
     </ul>
     <label className="swap swap-rotate">
-  {/* this hidden checkbox controls the state */}
+  {/* this hidden checkbox controls the state  */}
   <input type="checkbox" onChange={toggleTheme} className="theme-controller" value="synthwave" />
 
   {/* sun icon */}
