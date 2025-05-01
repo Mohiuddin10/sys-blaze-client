@@ -24,8 +24,8 @@ export default function Navbar () {
   <div className="flex gap-5">
     <ul className="menu menu-horizontal px-1 gap-5">
       <NavLink to="/" className={({isActive}) => isActive ? "text-primary font-bold" : "font-bold"}><a>Home</a></NavLink>
-      <Link to="/blogs" className="font-bold text-primary"><a>Blogs</a></Link>
-      <Link to="/bookmarks" className="font-bold"><a>Bookmarks</a></Link>
+      <NavLink to="/blogs" className={({isActive}) => isActive ? "text-primary font-bold" : "font-bold"}><a>Blogs</a></NavLink>
+      <NavLink to="/bookmarks" className={({isActive}) => isActive ? "text-primary font-bold" : "font-bold"}><a>Bookmarks</a></NavLink>
     </ul>
     <label className="swap swap-rotate">
   {/* this hidden checkbox controls the state  */}
