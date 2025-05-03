@@ -5,8 +5,8 @@ const BlogCard = ({ blog }) => {
   const { title, description, published_at, cover_image, id } = blog;
   return (
     <Link
-      to={`/blogs/${id}`}
-      className="max-w-sm mx-auto group hover:no-underline transition border-2 hover:scale-105 border-primary hover:border-secondary border-opacity-30 focus:no-underline dark:bg-gray-50 dark:bg-gray-50"
+      to={`/blog/${id}`}
+      className="max-w-sm mx-auto group hover:no-underline transition border-2 hover:scale-105 border-primary hover:border-secondary border-opacity-30 focus:no-underline"
     >
       <img
         role="presentation"
