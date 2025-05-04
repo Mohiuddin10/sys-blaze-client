@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, Outlet, useLoaderData } from "react-router-dom";
 
 const Blog = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -10,6 +10,7 @@ const Blog = () => {
     comments_count,
     public_reactions_count,
     published_at,
+    tags,
   } = blog;
   return (
     <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">
@@ -41,6 +42,7 @@ const Blog = () => {
           {/* tab start  */}
           <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap">
             <Link
+              to=""
               onClick={() => setTabIndex(0)}
               className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
                 tabIndex === 0 ? "border border-b-0" : "border-b"
@@ -61,6 +63,7 @@ const Blog = () => {
               <span>Content</span>
             </Link>
             <Link
+              to="author"
               onClick={() => setTabIndex(1)}
               className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
                 tabIndex === 1 ? "border border-b-0" : "border-b"
@@ -87,30 +90,22 @@ const Blog = () => {
         <div className="">
           <p>Insert the actual text content here...</p>
         </div>
+        <Outlet />
       </article>
       <div>
         <div className="flex flex-wrap py-6 gap-2 border-t border-dashed border-gray-400">
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="px-3 py-1 rounded-sm hover:underline bg-violet-400 text-gray-900"
-          >
-            #MambaUI
-          </a>
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="px-3 py-1 rounded-sm hover:underline bg-violet-400 text-gray-900"
-          >
-            #TailwindCSS
-          </a>
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="px-3 py-1 rounded-sm hover:underline bg-violet-400 text-gray-900"
-          >
-            #Angular
-          </a>
+          {/* tag start  */}
+          {tags.map((t) => (
+            <a
+              key={t}
+              rel="noopener noreferrer"
+              href="#"
+              className="px-3 py-1 rounded-sm hover:underline"
+            >
+              #{t}
+            </a>
+          ))}
+          {/* tag end  */}
         </div>
         <div className="space-y-2">
           <h4 className="text-lg font-semibold">Related posts</h4>
