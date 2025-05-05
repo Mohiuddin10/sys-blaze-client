@@ -10,7 +10,6 @@ const Blog = () => {
     comments_count,
     public_reactions_count,
     published_at,
-    tags,
   } = blog;
   return (
     <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">
@@ -92,42 +91,7 @@ const Blog = () => {
         </div>
         <Outlet />
       </article>
-      <div>
-        <div className="flex flex-wrap py-6 gap-2 border-t border-dashed border-gray-400">
-          {/* tag start  */}
-          {tags.map((t) => (
-            <a
-              key={t}
-              rel="noopener noreferrer"
-              href="#"
-              className="px-3 py-1 rounded-sm hover:underline"
-            >
-              #{t}
-            </a>
-          ))}
-          {/* tag end  */}
-        </div>
-        <div className="space-y-2">
-          <h4 className="text-lg font-semibold">Related posts</h4>
-          <ul className="ml-4 space-y-1 list-disc">
-            <li>
-              <a rel="noopener noreferrer" href="#" className="hover:underline">
-                Nunc id magna mollis
-              </a>
-            </li>
-            <li>
-              <a rel="noopener noreferrer" href="#" className="hover:underline">
-                Duis molestie, neque eget pretium lobortis
-              </a>
-            </li>
-            <li>
-              <a rel="noopener noreferrer" href="#" className="hover:underline">
-                Mauris nec urna volutpat, aliquam lectus sit amet
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <div></div>
     </div>
   );
 };

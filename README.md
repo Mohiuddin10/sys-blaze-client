@@ -1,12 +1,131 @@
-# React + Vite
+# 🚀 SysBlaze Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Status](https://img.shields.io/badge/status-active-brightgreen) ![Tech](https://img.shields.io/badge/Tech-React%2C%20Tailwind%2C%20Firebase-blue) ![License](https://img.shields.io/github/license/Mohiuddin10/sys-blaze-client)
 
-Currently, two official plugins are available:
+> 💡 **SysBlaze** is a modern client-side web application designed for system performance monitoring, management, and visualization. Built for speed, scalability, and seamless integration.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🔧 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚛️ **React.js** — Component-based UI
+- 🌬 **Tailwind CSS** — Utility-first CSS framework
+- 🎨 **DaisyUI** — Beautiful UI components
+- 🔐 **Firebase Auth** — Secure authentication
+- 🌐 **React Router DOM** — Dynamic routing
+- ⚙️ **Axios & JWT** — Secure API communication
+- 💅 **ESLint + Prettier** — Code formatting & linting
+
+---
+
+## 📸 Screenshots
+
+| Dashboard                                                        | Login Page                                                    | System Monitor                                                      |
+| ---------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------- |
+| ![Dashboard](https://via.placeholder.com/300x150?text=Dashboard) | ![Login](https://via.placeholder.com/300x150?text=Login+Page) | ![Monitor](https://via.placeholder.com/300x150?text=System+Monitor) |
+
+> Replace these with real screenshots from your app
+
+---
+
+## 🛠️ Installation & Setup
+
+Clone the repo:
+
+```bash
+git clone https://github.com/Mohiuddin10/sys-blaze-client.git
+cd sys-blaze-client
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file and add your environment variables:
+
+```env
+VITE_API_URL=https://your-api-url.com
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+# add other VITE_ variables as needed
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+---
+
+## 📁 Project Structure
+
+```bash
+src/
+├── assets/          # Static images and icons
+├── components/      # Reusable UI components
+├── context/         # Global state providers
+├── hooks/           # Custom React hooks
+├── layouts/         # Layout wrappers
+├── pages/           # Route components
+├── routes/          # Routing config and guards
+├── services/        # API service calls
+├── styles/          # Tailwind config & global styles
+└── utils/           # Helper functions
+```
+
+---
+
+## 🔐 Authentication
+
+- Uses **Firebase Auth** with **JWT** token verification.
+- Protected routes implemented via custom `PrivateRoute` component.
+- Supports email/password login.
+
+---
+
+## ✅ Features
+
+- 📊 Dynamic dashboard and performance metrics
+- 🔒 Secure authentication
+- 🌈 Responsive & accessible UI
+- ⚡ Optimized for performance
+- 🔁 Reusable components and layouts
+- 🔧 Environment-based configurations
+
+---
+
+## 🙌 Contributing
+
+Contributions are welcome! Please fork the repo and open a pull request.
+
+```bash
+# Create a new branch
+git checkout -b feature/your-feature
+
+# Commit your changes
+git commit -m "Add: your feature"
+
+# Push to your fork
+git push origin feature/your-feature
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 👤 Author
+
+**Mohammad Mohiuddin**  
+📧 [sj.ctg6737@gmail.com](mailto:sj.ctg6737@gmail.com)  
+🌐 [LinkedIn](https://www.linkedin.com/in/mohammad-mohiuddin-chittagong/)  
+🐙 [GitHub](https://github.com/Mohiuddin10)
+
+---
+
+> Made with ❤️ by Mohammad Mohiuddin
