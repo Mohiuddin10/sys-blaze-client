@@ -18,16 +18,6 @@
 
 ---
 
-## 📸 Screenshots
-
-| Dashboard                                                        | Login Page                                                    | System Monitor                                                      |
-| ---------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------- |
-| ![Dashboard](https://via.placeholder.com/300x150?text=Dashboard) | ![Login](https://via.placeholder.com/300x150?text=Login+Page) | ![Monitor](https://via.placeholder.com/300x150?text=System+Monitor) |
-
-> Replace these with real screenshots from your app
-
----
-
 ## 🛠️ Installation & Setup
 
 Clone the repo:
