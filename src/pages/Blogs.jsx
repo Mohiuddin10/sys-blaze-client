@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import BlogCard from "../components/BlogCard";
+import Loader from "../components/Loader";
 
 export default function Blogs() {
   // const [blogs, setBlogs] = useState([]);
@@ -11,9 +12,10 @@ export default function Blogs() {
   //     .then((data) => setBlogs(data));
   // }, []);
   const blogs = useLoaderData();
-  console.log(blogs);
 
-  console.log(blogs);
+  const navigation = useNavigation();
+  if (navigation.state === "loading") return <Loader />;
+
   return (
     <section className="">
       <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
@@ -42,7 +44,7 @@ export default function Blogs() {
           </div>
         </a>
         <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {blogs.map((blog) => (
+          {blogs.slice(1, 20).map((blog) => (
             <BlogCard key={blog.id} blog={blog} />
           ))}
         </div>
