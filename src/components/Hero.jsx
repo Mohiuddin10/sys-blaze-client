@@ -16,7 +16,7 @@ const Hero = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <div className="">
+          <div className="flex justify-center gap-4 items-center">
             <Link
               to="/blogs"
               href="#_"

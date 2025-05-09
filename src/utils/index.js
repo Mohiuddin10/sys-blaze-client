@@ -22,9 +22,9 @@ export const saveBlog = (blog) => {
 }
 
 // delete blog from bookmark 
-export const deleteBlog = (id) => {
-const blog = getBlogs();
-const newBlogs = blog.filter(b => b.id !== id);
+export const removeBookmark = (id) => {
+const blogs = getBlogs();
+const newBlogs = blogs.filter(b => b.id !== id);
 localStorage.setItem("blogs", JSON.stringify(newBlogs));
 toast.success("Removed from Bookmark successfully")
 }
